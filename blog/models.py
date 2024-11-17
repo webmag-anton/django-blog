@@ -21,6 +21,13 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
+    # The Meta class provides additional information or metadata about the model. Adding a class Meta is completely optional
+    class Meta:
+        ordering = ["-created_on"]  #  - symbol indicates descending order for a field
+    # Methods should always be below Meta classes.
+    # __str__ provides a human-readable representation of the model instance
+    def __str__(self):
+        return f"{self.title} | written by {self.author}"    
 
 
 class Comment(models.Model):
@@ -31,3 +38,7 @@ class Comment(models.Model):
     body = models.TextField()
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
+    class Meta:
+        ordering = ["created_on"]
+    def __str__(self):
+        return f"Comment {self.body} by {self.author}"    
