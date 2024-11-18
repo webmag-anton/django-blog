@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'django_summernote', # the dash in the package name is replaced with an underscore
 ]
 
 MIDDLEWARE = [

@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('', include('blog.urls'), name='blog-urls'),
     path('admin/', admin.site.urls),
+    path('summernote/', include('django_summernote.urls')), # as django_summernote is an app, we are including its urls.py file
+    path('', include('blog.urls'), name='blog-urls'),
 ]
