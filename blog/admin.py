@@ -6,9 +6,9 @@ from django_summernote.admin import SummernoteModelAdmin # enabling access to fu
 @admin.register(Post)   # The decorator is how we register a class, compared to just registering the standard model as we did before
 class PostAdmin(SummernoteModelAdmin):
 
-    list_display = ('title', 'slug', 'status')
-    search_fields = ['title']
-    list_filter = ('status',)
+    list_display = ('title', 'slug', 'status', 'created_on')
+    search_fields = ['title', 'content']
+    list_filter = ('status', 'created_on',)
     prepopulated_fields = {'slug': ('title',)}
     summernote_fields = ('content',)
 
