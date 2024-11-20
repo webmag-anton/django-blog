@@ -1,4 +1,4 @@
-{% load static %}
+{% load static %}  <!-- allows static files to be accessed from within a template -->
 
 <!-- we are assigning the 'home' URL to a variable named home_url -->
 {% url 'home' as home_url %}  <!-- the url tag returns an absolute path reference. 'home' refers to blog/urls.py name='home' -->
@@ -54,7 +54,7 @@
 
     <main class="flex-shrink-0 main-bg">
 
-        {% block content %}
+        {% block content %}   <!-- we named our block 'content' (any name) -->
         <!-- Content Goes here -->
         <p>This is my default paragraph</p>
         {% endblock content %}
