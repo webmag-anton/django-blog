@@ -23,8 +23,13 @@
             <div class="card-body">
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
+                <h2>{{ coder }}</h2>
                 <p class="card-text">
-                    {{ post.content | safe }}
+                    <!-- By default, Django treats content coming from a 3rd party, such 
+                         as Summernote, as unsafe, which helps to protect your site from attackers.
+                         We only need to use | safe on the blog content and not on the 
+                         title or excerpt because Summernote formatted our blog content as HTML. -->
+                    {{ post.content | safe }} <!-- The safe filter tells Django that this content is safe to be interpreted as HTML -->
                 </p>
             </div>
         </div>
