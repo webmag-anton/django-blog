@@ -28,7 +28,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = 'django-insecure--43+&q$j@#c4!kgh872ir&y(@k%s*b_k1h+#m!f1*az!^8t0=k'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '8000-webmaganton-djangoblog-90xlc64sw8d.ws.codeinstitute-ide.net',
