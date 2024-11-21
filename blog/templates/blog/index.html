@@ -18,6 +18,7 @@
                                     <p class="author">Author: {{ post.author }}</p>
                                 </div>
                             </div>
+                            <!-- The DTL url tag syntax allows us to pass in an argument (post.slug) in addition to the urlpattern name -->
                             <a href="{% url 'post_detail' post.slug %}" class="post-link">
                                 <h2 class="card-title">{{ post.title }}</h2>
                                 <p class="card-text">{{ post.excerpt }}</p>
