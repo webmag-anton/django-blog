@@ -3,7 +3,7 @@ from django.urls import path
 
 urlpatterns = [
     # Django is looking for a URL that matches blog/ and then it will execute the PostList view from our views.py file.
-    path('blog/', views.PostList.as_view(), name='home'),
+    path('', views.PostList.as_view(), name='home'),
     # <slug:slug> is where the slug value is passed from the template's URL tag.
     # This urlpattern (<slug:slug>) creates a url path of the domain path plus the slug value.
     #   The slug path converter before the colon defines the data type as a slug, 
