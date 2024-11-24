@@ -29,18 +29,26 @@ def post_detail(request, slug):
     comment_count = post.comments.filter(approved=True).count()
 
     if request.method == "POST":
+        print("Received a POST request")
         comment_form = CommentForm(data=request.POST)
+        # The is_valid() method checks our model to see the constraints on our fields. For example, 
+        # we discussed before that, the default behaviour in Django is that a field cannot be null. 
+        # The is_valid() method makes sure we don't try to write a null value to the database.
         if comment_form.is_valid():
+            # calling the save method with commit=False returns an object that 
+            # hasn't yet been saved to the database so that we can modify it further (add author, ...).
             comment = comment_form.save(commit=False)
             comment.author = request.user
             comment.post = post
             comment.save()
+            # we can create messages in one request and use them in another (usually the next one).
             messages.add_message(
                 request, messages.SUCCESS,
                 'Comment submitted and awaiting approval'
             )
 
     comment_form = CommentForm()
+    print("About to render template")
 
     # The response our view is returning is the contents of a webpage containing one post.
     return render(
