@@ -23,6 +23,10 @@ for (let button of editButtons) {
     let commentContent = document.getElementById(`comment${commentId}`).innerText;
     commentText.value = commentContent;
     submitButton.innerText = "Update";
+    //   Modifies the comment form's action attribute to ensure it knows which comment 
+    // it is updating when you click the Edit button.
+    //   An action value on a form appends onto the current URL. For example:
+    // form action = "edit_comment/7">    // returns http://urladdress.com/<slug:slug>/edit_comment/7
     commentForm.setAttribute("action", `edit_comment/${commentId}`);
   });
 }
