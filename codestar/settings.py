@@ -45,14 +45,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
     'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'crispy_forms',
     'crispy_bootstrap5',
-    'blog',
     'django_summernote', # the dash in the package name is replaced with an underscore
+    'cloudinary',
+    'blog',
     'about',
 ]
 
