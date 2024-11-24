@@ -12,4 +12,8 @@ urlpatterns = [
     #   If you had a human resources web app that identified workers by 
     # their ID badge number, then you could use the syntax <int:id_badge>
     path('<slug:slug>/', views.post_detail, name='post_detail'),
+    path('<slug:slug>/edit_comment/<int:comment_id>',
+         views.comment_edit, name='comment_edit'),
+    path('<slug:slug>/delete_comment/<int:comment_id>',
+         views.comment_delete, name='comment_delete'),     
 ]
