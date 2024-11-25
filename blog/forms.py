@@ -1,5 +1,5 @@
-from .models import Comment
 from django import forms
+from .models import Comment
 
 # CommentForm inherites from Django's forms.ModelForm class
 class CommentForm(forms.ModelForm):
