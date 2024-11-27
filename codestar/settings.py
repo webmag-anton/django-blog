@@ -26,7 +26,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure--43+&q$j@#c4!kgh872ir&y(@k%s*b_k1h+#m!f1*az!^8t0=k'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -113,7 +113,9 @@ DATABASES = {
 #     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 # }
 
-# allow you to add blog post content from the admin dashboard
+# allow you to add blog post content from the admin dashboard.
+# CSRF - Cross-Site Request Forgery. 
+# This is a list of urls that are allowed to send form data to my site
 CSRF_TRUSTED_ORIGINS = [
     "https://*.codeinstitute-ide.net/",
     "https://*.herokuapp.com"
